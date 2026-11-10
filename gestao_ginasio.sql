@@ -1,11 +1,11 @@
--- phpMyAdmin SQL Dump
--- version 5.2.3
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Tempo de geração: 10-Nov-2026 às 20:44
--- Versão do servidor: 10.11.16-MariaDB
--- versão do PHP: 8.5.12
+phpMyAdmin SQL Dump
+version 5.2.3
+https://www.phpmyadmin.net/
+  
+Host: 127.0.0.1
+Tempo de geração: 10-Nov-2026 às 20:44
+Versão do servidor: 10.11.16-MariaDB
+versão do PHP: 8.5.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -17,15 +17,15 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
---
--- Base de dados: `gestao_ginasio`
---
+
+Base de dados: `gestao_ginasio`
+
 
 -- --------------------------------------------------------
 
---
--- Estrutura da tabela `aulas`
---
+
+Estrutura da tabela `aulas`
+
 
 CREATE TABLE `aulas` (
   `id_aula` int(11) NOT NULL,
@@ -36,9 +36,9 @@ CREATE TABLE `aulas` (
   `duracao_minutos` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Extraindo dados da tabela `aulas`
---
+
+Extraindo dados da tabela `aulas`
+
 
 INSERT INTO `aulas` (`id_aula`, `id_modalidade`, `id_treinador`, `dia_semana`, `hora`, `duracao_minutos`) VALUES
 (1, 1, 1, 'Segunda-feira', '09:00:00', 60),
@@ -49,9 +49,9 @@ INSERT INTO `aulas` (`id_aula`, `id_modalidade`, `id_treinador`, `dia_semana`, `
 
 -- --------------------------------------------------------
 
---
--- Estrutura da tabela `clientes`
---
+
+Estrutura da tabela `clientes`
+
 
 CREATE TABLE `clientes` (
   `id_cliente` int(11) NOT NULL,
@@ -62,9 +62,9 @@ CREATE TABLE `clientes` (
   `data_inscricao` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Extraindo dados da tabela `clientes`
---
+
+Extraindo dados da tabela `clientes`
+
 
 INSERT INTO `clientes` (`id_cliente`, `nome`, `email`, `telefone`, `data_nascimento`, `data_inscricao`) VALUES
 (1, 'Joao Silva', 'joao@gmail.com', '912345678', '2000-05-12', '2026-01-10'),
@@ -75,9 +75,9 @@ INSERT INTO `clientes` (`id_cliente`, `nome`, `email`, `telefone`, `data_nascime
 
 -- --------------------------------------------------------
 
---
--- Estrutura da tabela `inscricoes`
---
+
+Estrutura da tabela `inscricoes`
+
 
 CREATE TABLE `inscricoes` (
   `id_inscricao` int(11) NOT NULL,
@@ -87,9 +87,9 @@ CREATE TABLE `inscricoes` (
   `estado` varchar(20) DEFAULT 'Ativa'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Extraindo dados da tabela `inscricoes`
---
+
+Extraindo dados da tabela `inscricoes`
+
 
 INSERT INTO `inscricoes` (`id_inscricao`, `id_cliente`, `id_modalidade`, `data_inscricao`, `estado`) VALUES
 (1, 1, 1, '2026-01-10', 'Ativa'),
@@ -100,9 +100,9 @@ INSERT INTO `inscricoes` (`id_inscricao`, `id_cliente`, `id_modalidade`, `data_i
 
 -- --------------------------------------------------------
 
---
--- Estrutura da tabela `modalidades`
---
+
+Estrutura da tabela `modalidades`
+
 
 CREATE TABLE `modalidades` (
   `id_modalidade` int(11) NOT NULL,
@@ -111,9 +111,9 @@ CREATE TABLE `modalidades` (
   `preco_mensal` decimal(8,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Extraindo dados da tabela `modalidades`
---
+
+Extraindo dados da tabela `modalidades`
+
 
 INSERT INTO `modalidades` (`id_modalidade`, `nome`, `descricao`, `preco_mensal`) VALUES
 (1, 'Musculacao', 'Treino de forca', 30.00),
@@ -124,9 +124,9 @@ INSERT INTO `modalidades` (`id_modalidade`, `nome`, `descricao`, `preco_mensal`)
 
 -- --------------------------------------------------------
 
---
--- Estrutura da tabela `pagamentos`
---
+
+Estrutura da tabela `pagamentos`
+
 
 CREATE TABLE `pagamentos` (
   `id_pagamento` int(11) NOT NULL,
@@ -137,9 +137,9 @@ CREATE TABLE `pagamentos` (
   `estado` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Extraindo dados da tabela `pagamentos`
---
+
+Extraindo dados da tabela `pagamentos`
+
 
 INSERT INTO `pagamentos` (`id_pagamento`, `id_cliente`, `valor`, `data_pagamento`, `metodo_pagamento`, `estado`) VALUES
 (1, 1, 30.00, '2026-01-10', 'Cartao', 'Pago'),
@@ -150,9 +150,9 @@ INSERT INTO `pagamentos` (`id_pagamento`, `id_cliente`, `valor`, `data_pagamento
 
 -- --------------------------------------------------------
 
---
--- Estrutura da tabela `treinadores`
---
+
+Estrutura da tabela `treinadores`
+
 
 CREATE TABLE `treinadores` (
   `id_treinador` int(11) NOT NULL,
@@ -162,9 +162,9 @@ CREATE TABLE `treinadores` (
   `especialidade` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Extraindo dados da tabela `treinadores`
---
+
+Extraindo dados da tabela `treinadores`
+
 
 INSERT INTO `treinadores` (`id_treinador`, `nome`, `email`, `telefone`, `especialidade`) VALUES
 (1, 'Carlos Ferreira', 'carlos@gmail.com', '917111111', 'Musculacao'),
@@ -173,114 +173,114 @@ INSERT INTO `treinadores` (`id_treinador`, `nome`, `email`, `telefone`, `especia
 (4, 'Sofia Pereira', 'sofia@gmail.com', '917444444', 'Pilates'),
 (5, 'Miguel Rodrigues', 'miguel@gmail.com', '917555555', 'Cardio');
 
---
--- Índices para tabelas despejadas
---
 
---
--- Índices para tabela `aulas`
---
+Índices para tabelas despejadas
+
+
+
+Índices para tabela `aulas`
+
 ALTER TABLE `aulas`
   ADD PRIMARY KEY (`id_aula`),
   ADD KEY `id_modalidade` (`id_modalidade`),
   ADD KEY `id_treinador` (`id_treinador`);
 
---
--- Índices para tabela `clientes`
---
+
+Índices para tabela `clientes`
+
 ALTER TABLE `clientes`
   ADD PRIMARY KEY (`id_cliente`),
   ADD UNIQUE KEY `email` (`email`);
 
---
--- Índices para tabela `inscricoes`
---
+
+Índices para tabela `inscricoes`
+
 ALTER TABLE `inscricoes`
   ADD PRIMARY KEY (`id_inscricao`),
   ADD KEY `id_cliente` (`id_cliente`),
   ADD KEY `id_modalidade` (`id_modalidade`);
 
---
--- Índices para tabela `modalidades`
---
+
+Índices para tabela `modalidades`
+
 ALTER TABLE `modalidades`
   ADD PRIMARY KEY (`id_modalidade`);
 
---
--- Índices para tabela `pagamentos`
---
+
+Índices para tabela `pagamentos`
+
 ALTER TABLE `pagamentos`
   ADD PRIMARY KEY (`id_pagamento`),
   ADD KEY `id_cliente` (`id_cliente`);
 
---
--- Índices para tabela `treinadores`
---
+
+Índices para tabela `treinadores`
+
 ALTER TABLE `treinadores`
   ADD PRIMARY KEY (`id_treinador`),
   ADD UNIQUE KEY `email` (`email`);
 
---
--- AUTO_INCREMENT de tabelas despejadas
---
 
---
--- AUTO_INCREMENT de tabela `aulas`
---
+AUTO_INCREMENT de tabelas despejadas
+
+
+
+AUTO_INCREMENT de tabela `aulas`
+
 ALTER TABLE `aulas`
   MODIFY `id_aula` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
---
--- AUTO_INCREMENT de tabela `clientes`
---
+
+AUTO_INCREMENT de tabela `clientes`
+
 ALTER TABLE `clientes`
   MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
---
--- AUTO_INCREMENT de tabela `inscricoes`
---
+
+AUTO_INCREMENT de tabela `inscricoes`
+
 ALTER TABLE `inscricoes`
   MODIFY `id_inscricao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
---
--- AUTO_INCREMENT de tabela `modalidades`
---
+
+AUTO_INCREMENT de tabela `modalidades`
+
 ALTER TABLE `modalidades`
   MODIFY `id_modalidade` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
---
--- AUTO_INCREMENT de tabela `pagamentos`
---
+
+AUTO_INCREMENT de tabela `pagamentos`
+
 ALTER TABLE `pagamentos`
   MODIFY `id_pagamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
---
--- AUTO_INCREMENT de tabela `treinadores`
---
+
+AUTO_INCREMENT de tabela `treinadores`
+
 ALTER TABLE `treinadores`
   MODIFY `id_treinador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
---
--- Restrições para despejos de tabelas
---
 
---
--- Limitadores para a tabela `aulas`
---
+ Restrições para despejos de tabelas
+
+
+
+Limitadores para a tabela `aulas`
+
 ALTER TABLE `aulas`
   ADD CONSTRAINT `aulas_ibfk_1` FOREIGN KEY (`id_modalidade`) REFERENCES `modalidades` (`id_modalidade`),
   ADD CONSTRAINT `aulas_ibfk_2` FOREIGN KEY (`id_treinador`) REFERENCES `treinadores` (`id_treinador`);
 
---
--- Limitadores para a tabela `inscricoes`
---
+
+Limitadores para a tabela `inscricoes`
+
 ALTER TABLE `inscricoes`
   ADD CONSTRAINT `inscricoes_ibfk_1` FOREIGN KEY (`id_cliente`) REFERENCES `clientes` (`id_cliente`),
   ADD CONSTRAINT `inscricoes_ibfk_2` FOREIGN KEY (`id_modalidade`) REFERENCES `modalidades` (`id_modalidade`);
 
---
--- Limitadores para a tabela `pagamentos`
---
+
+Limitadores para a tabela `pagamentos`
+
 ALTER TABLE `pagamentos`
   ADD CONSTRAINT `pagamentos_ibfk_1` FOREIGN KEY (`id_cliente`) REFERENCES `clientes` (`id_cliente`);
 COMMIT;
